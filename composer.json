@@ -21,10 +21,12 @@
     {
       "name": "Stefano Mtangoo",
       "email": "mwinjilisti@gmail.com",
-      "homepage": "http://hosannahighertech.co.tz",
+      "homepage": "https://hosannahighertech.co.tz",
       "role": "Developer"
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": ">=5.5.0",
     "yiisoft/yii2": ">=2.0.1",
