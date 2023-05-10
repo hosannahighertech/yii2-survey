@@ -29,7 +29,7 @@
     "php": ">=5.5.0",
     "yiisoft/yii2": ">=2.0.1",
     "yiisoft/yii2-bootstrap5": ">=2.0.2",
-    "cenotia/yii2-remote-modal": "^1.0",
+    "cenotia/yii2-remote-modal": "dev-fixes",
     "kartik-v/yii2-dialog": "^1.0",
     "onmotion/yii2-widget-upload-crop": ">=0.5",
     "kartik-v/yii2-editable": "^1.7",
@@ -46,5 +46,11 @@
     "psr-4": {
       "onmotion\\survey\\": ""
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/hosannahighertech/yii2-remote-modal"
+    }
+  ]
 }
