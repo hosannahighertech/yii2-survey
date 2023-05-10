@@ -9,13 +9,19 @@ class m181018_070730_create_table_survey_type extends Migration
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
-        }
 
-        $this->createTable('{{%survey_type}}', [
-            'survey_type_id' => $this->tinyInteger()->unsigned()->notNull()->append('AUTO_INCREMENT PRIMARY KEY'),
-            'survey_type_name' => $this->string(),
-            'survey_type_descr' => $this->string(),
-        ], $tableOptions);
+            $this->createTable('{{%survey_type}}', [
+                'survey_type_id' => $this->tinyInteger()->unsigned()->notNull()->append('AUTO_INCREMENT PRIMARY KEY'),
+                'survey_type_name' => $this->string(),
+                'survey_type_descr' => $this->string(),
+            ], $tableOptions);
+        } else {
+            $this->createTable('{{%survey_type}}', [
+                'survey_type_id' => $this->bigPrimaryKey()->unsigned()->notNull(),
+                'survey_type_name' => $this->string(),
+                'survey_type_descr' => $this->string(),
+            ], $tableOptions);
+        }
 
         $this->batchInsert('{{%survey_type}}', ['survey_type_name', 'survey_type_descr'], [
             ['Multiple choice', 'Ask your respondent to choose multiple answers from your list of answer choices.'],
@@ -29,7 +35,6 @@ class m181018_070730_create_table_survey_type extends Migration
             ['Date/Time', 'Ask respondents to enter a specific date and/or time.'],
             ['Calendar', 'Ask respondents to choose better date/time for a meeting.']
         ]);
-
     }
 
     public function down()
