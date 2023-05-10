@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: kozhevnikov
@@ -8,7 +9,7 @@
 
 use onmotion\survey\models\SurveyUserAnswer;
 use vova07\imperavi\Widget;
-use yii\bootstrap\Progress;
+use yii\bootstrap5\Progress;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -22,7 +23,7 @@ foreach ($question->answers as $i => $answer) {
     $count = $answer->getTotalUserAnswersCount();
     try {
         $percent = ($count / $totalVotesCount) * 100;
-    }catch (\Exception $e){
+    } catch (\Exception $e) {
         $percent = 0;
     }
     echo $answer->survey_answer_name;

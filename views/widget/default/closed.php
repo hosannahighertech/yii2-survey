@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: kozhevnikov
@@ -10,7 +11,7 @@ use cenotia\components\modal\RemoteModal;
 use kartik\editable\Editable;
 use kartik\helpers\Html;
 use wbraganca\dynamicform\DynamicFormWidget;
-use yii\bootstrap\BootstrapPluginAsset;
+use yii\bootstrap5\BootstrapPluginAsset;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -19,5 +20,3 @@ use yii\helpers\Url;
 ?>
 
 <h4><?php echo \Yii::t('survey', 'This survey is closed'); ?></h4>
-
-
